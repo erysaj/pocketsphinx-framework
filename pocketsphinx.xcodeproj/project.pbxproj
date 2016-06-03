@@ -72,6 +72,7 @@
 		444B5F3D1D01F4D900E9323E /* tmat.h in Headers */ = {isa = PBXBuildFile; fileRef = 444B5EEE1D01F4D900E9323E /* tmat.h */; };
 		444B5F3E1D01F4D900E9323E /* vector.c in Sources */ = {isa = PBXBuildFile; fileRef = 444B5EEF1D01F4D900E9323E /* vector.c */; };
 		444B5F3F1D01F4D900E9323E /* vector.h in Headers */ = {isa = PBXBuildFile; fileRef = 444B5EF01D01F4D900E9323E /* vector.h */; };
+		444B5F461D01FED600E9323E /* sphinxbase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 444B5F451D01FED600E9323E /* sphinxbase.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -142,6 +143,7 @@
 		444B5EEE1D01F4D900E9323E /* tmat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tmat.h; sourceTree = "<group>"; };
 		444B5EEF1D01F4D900E9323E /* vector.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = vector.c; sourceTree = "<group>"; };
 		444B5EF01D01F4D900E9323E /* vector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vector.h; sourceTree = "<group>"; };
+		444B5F451D01FED600E9323E /* sphinxbase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = sphinxbase.framework; path = Carthage/Build/iOS/sphinxbase.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				444B5F461D01FED600E9323E /* sphinxbase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,6 +161,7 @@
 		441141DA1D01ED210025D33A = {
 			isa = PBXGroup;
 			children = (
+				444B5F451D01FED600E9323E /* sphinxbase.framework */,
 				441141E61D01ED210025D33A /* pocketsphinx */,
 				441141E51D01ED210025D33A /* Products */,
 			);
@@ -511,10 +515,16 @@
 		441141ED1D01ED210025D33A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				HEADER_SEARCH_PATHS = "${PROJECT_DIR}/Carthage/Build/iOS/sphinxbase.framework/Headers";
 				INFOPLIST_FILE = pocketsphinx/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -527,10 +537,16 @@
 		441141EE1D01ED210025D33A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				HEADER_SEARCH_PATHS = "${PROJECT_DIR}/Carthage/Build/iOS/sphinxbase.framework/Headers";
 				INFOPLIST_FILE = pocketsphinx/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
